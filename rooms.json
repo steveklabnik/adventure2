@@ -1,0 +1,1 @@
+[{"description":"A room.","exits":[{"East":1},{"South":2}]},{"description":"A second room.","exits":[{"West":0},{"South":3}]},{"description":"A third room.","exits":[{"North":0},{"East":3}]},{"description":"A fourth second room.","exits":[{"West":2},{"North":1}]}]
