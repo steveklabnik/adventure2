@@ -21,39 +21,8 @@ struct Room {
 }
 
 fn main() {
-    let world = vec![
-        Room {
-            description: String::from("A room."),
-            exits: vec![
-                Exit::East(1),
-                Exit::South(2),
-            ],
-        },
-        Room {
-            description: String::from("A second room."),
-            exits: vec![
-                Exit::West(0),
-                Exit::South(3),
-            ],
-        },
-        Room {
-            description: String::from("A third room."),
-            exits: vec![
-                Exit::North(0),
-                Exit::East(3),
-            ],
-        },
-        Room {
-            description: String::from("A fourth second room."),
-            exits: vec![
-                Exit::West(2),
-                Exit::North(1),
-            ],
-        },
-    ];
-
-    let j = serde_json::to_string(&world).unwrap();
-    println!("{}", j);
+    let world = std::fs::read_to_string("rooms.json").unwrap();
+    let world: Vec<Room> = serde_json::from_str(&world).unwrap();
 
     let mut current_room = 0;
 
